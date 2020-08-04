@@ -32,7 +32,7 @@ class Stack():
         return len(self.data)  # 스택의 데이터 길이 리턴
 
     def __repr__(self):  # 생성자 문자열 리턴 초기화
-        return repr(self.data)  # 리턴하는 데이터는 문자열로 턴
+        return repr(self.data)  # 리턴하는 데이터는 문자열로 리턴
 
 
 if __name__ == "__main__":
