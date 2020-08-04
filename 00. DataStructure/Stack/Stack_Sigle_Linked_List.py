@@ -1,43 +1,43 @@
 # Stack with Single Linked List
 
 
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+class Node:  # 싱글 링크드 리스트 노드 클래스
+    def __init__(self, data):  # 생성자 초기화
+        self.data = data  # 노드의 데이터 초기화
+        self.next = None  # 노드의 다음노드정보는 None
 
 
-class Stack:
-    def __init__(self):
-        self.head = None
+class Stack:  # 스택 클래스
+    def __init__(self):  # 생성자 초기화
+        self.head = None  # 노드의 헤더정보는 None
 
-    def isEmpty(self):
-        if self.head:
-            return False
+    def isEmpty(self):  # 스택에 데이터 있는지 확인 func
+        if self.head:  # 스택에 헤더가 있다
+            return False  # 데이터가 있음으로, False 리턴
         else:
-            return True
+            return True  # (스택에 헤더가 없으면)데이터가 없음으로, True 리턴
 
-    def push(self, data):
-        new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
+    def push(self, data):  # 데이터 삽입 func
+        new_node = Node(data)  # 새로운 객체 생성 및 새로운 노드로 저장
+        new_node.next = self.head  # 새로운 노드의 다음노드정보는 헤더(즉, None)
+        self.head = new_node  # 헤더는 새로운 노드
 
-    def pop(self):
-        if self.isEmpty():
-            print ('Stack is Empty', -1)
-        else:
-            data = self.head.data
-            self.head = self.head.next
-            return data
+    def pop(self):  # 데이터 삭제 func
+        if self.isEmpty():  # 스택에 데이터가 없다면
+            print('Stack is Empty', -1)  # 스택이 비었음, -1 리턴
+        else:  # 스택에 데이터가 있다면
+            data = self.head.data  # 헤더의 데이터값을 data 변수에 저장
+            self.head = self.head.next  # 헤더의 정보는 헤더의 다음노드정보
+            return data  # 삭제될 data 변수 리턴
 
-    def peek(self):
-        if self.isEmpty():
-            print ('Stack is Empty', -1)
-        else:
-            return self.head.data
+    def peek(self):  # 스택의 마지막 데이터 확인 func
+        if self.isEmpty():  # 스택에 데이터가 없다면
+            print('Stack is Empty', -1)  # 스택이 비었음, -1 리턴
+        else:  # 스택에 데이터가 있다면,
+            return self.head.data  # 스택 헤더의 데이터값을 리턴
 
-    def size(self):
-        return len(self.data)
+    def size(self):  # 데이터 갯수 확인 func
+        return len(self.data)  # 스택의 데이터 길이 리턴
 
 
 if __name__ == "__main__":
