@@ -1,6 +1,9 @@
+# Stack with list()
+
+
 class Stack():
     def __init__(self):  # 생성자 초기화
-        self.data = []  # self.data list 구조로 초기화
+        self.data = list()  # self.data list 구조로 초기화
 
     def isEmpty(self):  # 스택에 데이터 있는지 확인 func
         if len(self.data) == 0:  # self.data list에 데이터가 없다면
