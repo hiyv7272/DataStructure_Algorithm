@@ -10,7 +10,6 @@ class LinkedList:
         self.head = None
         self.tail = None
 
-
     def __repr__(self):
         if self.nodeCount == 0:
             return 'LinkedList: empty'
@@ -24,7 +23,6 @@ class LinkedList:
             curr = curr.next
         return s
 
-
     def getAt(self, pos):
         if pos < 1 or pos > self.nodeCount:
             return None
@@ -36,7 +34,6 @@ class LinkedList:
             i += 1
 
         return curr
-
 
     def insertAt(self, pos, newNode):
         if pos < 1 or pos > self.nodeCount + 1:
@@ -60,10 +57,8 @@ class LinkedList:
         self.nodeCount += 1
         return True
 
-
     def getLength(self):
         return self.nodeCount
-
 
     def traverse(self):
         result = []
@@ -72,7 +67,6 @@ class LinkedList:
             result.append(curr.data)
             curr = curr.next
         return result
-
 
     def concat(self, L):
         self.tail.next = L.head
