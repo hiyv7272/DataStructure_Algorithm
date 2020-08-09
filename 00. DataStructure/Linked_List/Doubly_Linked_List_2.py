@@ -64,6 +64,7 @@ class NodeMgmt:
             node = node.next
 
 
+# test #
 node_mgmt = NodeMgmt(0)
 for data in range(1, 10):
     node_mgmt.insert(data)
