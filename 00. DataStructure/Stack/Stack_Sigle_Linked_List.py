@@ -37,12 +37,13 @@ class Stack(object):  # 스택 클래스
     def size(self):  # 데이터 갯수 확인 func
         return len(self.data)  # 스택의 데이터 길이 리턴
 
-    def _printList(self):
+    def __repr__(self):
         node = self.head
+        data_list = list()
         while node:
-            print(node.data, end=' ')
+            data_list.insert(0, node.data)
             node = node.next
-        print()
+        return repr(data_list)
 
 
 # 초기 test code
@@ -53,10 +54,8 @@ if __name__ == "__main__":
     for i in range(11):
         stack.push(i)
 
-    print('Stack:')
-    stack._printList()
+    print('Stack:', stack)
     print('Stack peek:', stack.peek())
     for _ in range(5):
         print('Stack pop:', stack.pop())
-    print('Stack:')
-    stack._printList()
+    print('Stack:', stack)
