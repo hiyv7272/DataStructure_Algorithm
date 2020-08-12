@@ -1,7 +1,7 @@
 # Queue with Linked_List
 class Node(object):
-    def __init__(self, value=None, pointer=None):
-        self.value = value
+    def __init__(self, data=None, pointer=None):
+        self.data = data
         self.pointer = pointer
 
 
@@ -14,8 +14,8 @@ class Queue(object):
     def isEmpty(self):
         return not bool(self.head)
 
-    def enqueue(self, value):
-        node = Node(value)
+    def enqueue(self, data):
+        node = Node(data)
         if not self.head:
             self.head = node
             self.tail = node
@@ -27,33 +27,26 @@ class Queue(object):
 
     def dequeue(self):
         if self.head:
-            value = self.head.value
+            data = self.head.data
             self.head = self.head.pointer
             self.count -= 1
-            return value
+            return data
         else:
             print('Queue is Empty')
 
     def peek(self):
-        return self.head.value
+        return self.head.data
 
     def size(self):
         return self.count
 
-    def print(self):
+    def __repr__(self):
         node = self.head
+        data_list = list()
         while node:
-            print(node.value, end=' ')
+            data_list.insert(0, node.data)
             node = node.pointer
-        print()
-        # print('here!!!!!',self.head)
-        # if self.head:
-        #     queue_list = list()
-        #     for value in self.head:
-        #         queue_list.append(value)
-        #     return queue_list
-        # else:
-        #     print('Queue is Empty')
+        return repr(data_list)
 
 
 # 초기 test code
@@ -65,9 +58,10 @@ if __name__ == "__main__":
         queue.enqueue(i)
 
     print('Queue size: ', queue.size())
-    print('Queue :', queue.print())
+    print('Queue :', queue)
     print('Queue peek:', queue.peek())
     for _ in range(5):
         print('Queue pop:', queue.dequeue())
+
     print('Queue size: ', queue.size())
-    print('Queue :', queue.print())
+    print('Queue :', queue)
