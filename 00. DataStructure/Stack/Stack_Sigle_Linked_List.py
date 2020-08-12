@@ -1,13 +1,13 @@
 # Stack with Single Linked List
-class Node:  # 싱글 링크드 리스트 노드 클래스
+class Node(object):  # 싱글 링크드 리스트 노드 클래스
     def __init__(self, data):  # 생성자 초기화
-        self.data = data  # 노드의 데이터 초기화
+        self.data = data  # 노드의 데이터 초기화 None
         self.next = None  # 노드의 다음노드정보는 None
 
 
-class Stack:  # 스택 클래스
+class Stack(object):  # 스택 클래스
     def __init__(self):  # 생성자 초기화
-        self.head = None  # 노드의 헤더정보는 None
+        self.head = None  # 노드의 헤더정보는 초기값 None
 
     def isEmpty(self):  # 스택에 데이터 있는지 확인 func
         if self.head:  # 스택에 헤더가 있다
@@ -37,6 +37,13 @@ class Stack:  # 스택 클래스
     def size(self):  # 데이터 갯수 확인 func
         return len(self.data)  # 스택의 데이터 길이 리턴
 
+    def _printList(self):
+        node = self.head
+        while node:
+            print(node.data, end=' ')
+            node = node.next
+        print()
+
 
 # 초기 test code
 if __name__ == "__main__":
@@ -45,8 +52,11 @@ if __name__ == "__main__":
     print('Insert in Stack 0 to 10')
     for i in range(11):
         stack.push(i)
-    print('Stack :', stack)
+
+    print('Stack:')
+    stack._printList()
     print('Stack peek:', stack.peek())
     for _ in range(5):
         print('Stack pop:', stack.pop())
-    print('Stack :', stack)
+    print('Stack:')
+    stack._printList()
