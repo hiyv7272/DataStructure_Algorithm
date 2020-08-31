@@ -51,7 +51,6 @@ if __name__ == "__main__":
     print('Insert in Stack 0 to 10')
     for i in range(11):
         stack.push(i)
-
     print('Stack:', stack)
     print('Stack peek:', stack.peek())
     for _ in range(5):
