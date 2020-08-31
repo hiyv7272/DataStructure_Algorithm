@@ -1,4 +1,4 @@
-# Queue with list
+# Queue with List
 class Queue(object):
     def __init__(self):
         self.items = list()
