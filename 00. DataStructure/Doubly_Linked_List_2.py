@@ -1,3 +1,4 @@
+# Doubly_Linked_list_2
 class Node:
     def __init__(self, data, prev=None, next=None):
         self.prev = prev
