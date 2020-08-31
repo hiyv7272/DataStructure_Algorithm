@@ -1,4 +1,4 @@
-# Stack with list()
+# Stack with List
 class Stack:
     def __init__(self):  # 생성자 초기화
         self.data = list()  # 스택의 구조를 빈 리스트로 초기화
