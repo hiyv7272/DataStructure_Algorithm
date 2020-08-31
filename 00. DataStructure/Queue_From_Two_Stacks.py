@@ -55,6 +55,5 @@ if __name__ == "__main__":
     print('Queue peek:', queue.peek())
     for _ in range(5):
         print('Queue pop:', queue.dequeue())
-
     print('Queue size: ', queue.size())
     print('Queue :', queue)
